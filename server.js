@@ -36,10 +36,7 @@ app.use(function(req, res, next) {
 });
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('/build'));
-}
-  
+
 // HTTP request logger
 app.use(morgan('tiny'));
 app.use('/api', routes)
