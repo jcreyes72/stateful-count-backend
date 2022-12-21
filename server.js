@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
 
+
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -29,6 +31,13 @@ app.use(cors({
     origin: 'https://statefulcount-front.onrender.com',
     optionsSuccessStatus: 200
   }));
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+  
 // HTTP request logger
 app.use(morgan('tiny'));
 app.use('/api', routes)
