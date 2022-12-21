@@ -27,10 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use(cors({
-    origin: 'https://statefulcount-front.onrender.com',
-    optionsSuccessStatus: 200
-  }));
+app.use(cors());
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
