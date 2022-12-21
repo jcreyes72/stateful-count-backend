@@ -5,7 +5,7 @@ const router = express.Router();
 const currentState = require('../models/currentState')
 
 // Route
-router.get('/', (req, res) => {
+router.get('/api', (req, res) => {
 
     currentState.find({ })
         .then((data) => {
