@@ -25,7 +25,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://statefulcount-front.onrender.com',
+    optionsSuccessStatus: 200
+  }));
 // HTTP request logger
 app.use(morgan('tiny'));
 app.use('/api', routes)
