@@ -18,7 +18,7 @@ router.get('/api', (req, res) => {
 
 });
 
-router.put('/update', (req, res) => {
+router.put('/api/update', (req, res) => {
     const data = req.body.currentCount;
   
     // Find the existing count and update it
