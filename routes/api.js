@@ -5,7 +5,7 @@ const router = express.Router();
 const currentState = require('../models/currentState')
 
 // Route
-router.get('/api', (req, res) => {
+router.get('/', (req, res) => {
 
     currentState.find({ })
         .then((data) => {
@@ -18,7 +18,7 @@ router.get('/api', (req, res) => {
 
 });
 
-router.put('/api/update', (req, res) => {
+router.put('/update', (req, res) => {
     const data = req.body.currentCount;
   
     // Find the existing count and update it
